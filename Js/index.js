@@ -169,14 +169,53 @@ if(allGames.error === false){
 
   errorContainer3.innerHTML = ""
 
-  errorContainer3.innerHTML = `<div class="error">
+  errorContainer3.innerHTML = `<div class="error">                        
                                 <h3>${allGames.msg}</h3>
                                 <p>Error status: ${allGames.status}</p>                                
                                 <p>Error: ${allGames.error}</p>
-                                <p>Something went wrong</p>
                               </div>
     `;
+                // By following the example from 'fetchApi.js' about displaying the selfmade array, here 'allGames'
+                // refer back to [data] followed up by [0] and its content and next [1] followed by its content..etc etc
+                // just like the API console.log shows.
+                // In this case allGames has an array of 'games, error, status and msg' which we can use as above.
 
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Depending on usage of inneHTML or creatingElement, they both have their uses. While one is easier to follow and 
+// the other demands much more thinking and planning. CreatingElement gives you access directly to the element you 
+// create while innerHTML does not, with javascript in mind.
+
+
+// This correlates with <button>'s we use in the cart or product pages needs to be accessible via JS which innerHTML lacks.
+// So by using createElement also gives us access to JS too, as we can apply it directly when creating it.
+
+/*  
+  <div>
+    <div class="flex-children-to-row">                  
+      <div class="image-box"></div>                    
+      <div class="flex-column">                         
+        <div class="movie-info">
+          <div class="loader"></div>
+        </div>
+        <button class="addcart">Add to cart</button>
+      </div>
+  </div> 
+*/
+// ^ This would be inside the HTML code  ^
+
+  //    By adding button in HTML we get access to the button via JS querySelector
+  //    We still need to add button.addEventListener('click', run-function)
+  //    * run-function is the 'function()' it will run on click *
+
+  //     EXAMPLE:
+  //       const buttonPlus = document.createElement("button")
+  //       buttonPlus.classList.add('plus')
+  //       buttonPlus.textContent = "+"
+  //       buttonPlus.dataset.action = 'increase'                         < JS
+  //       quantityWrapper.appendChild(buttonPlus);
+  //       buttonPlus.addEventListener("click", removeOneFromCart)        < JS

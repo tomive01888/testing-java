@@ -1,4 +1,4 @@
-let baseURL = "https://api.noroff.dev/api/v1/game/"
+let baseURL = "https://api.noroff.dev/api/v1//" //intentional error to display it
 
 // let baseURL = "https://v2.api.noroff.dev/gamehub/"
 
@@ -20,9 +20,9 @@ export async function grabGame(){
         //hvis baseURL ikke er ok fra fetch vil den gå inn her og gi en error=true
         else{
 
-            const data = {
-                games : [],
-                error : true,
+            const data = {                      // you can use this selfmade array to display on the webpage like you would
+                games : [],                     // with the API array '${x.error}'
+                error : true,   
                 msg : "Error fetching API",
                 status : 404,
             }
