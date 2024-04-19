@@ -148,11 +148,12 @@ import { createHTML } from "./createhtml.js"
 const getAPI3 = document.querySelector(".fetch-and-create-innehtml-via-export")
 const errorContainer3 = document.querySelector(".error3")
 
+
 let games = []
 
-const allGames = await grabGame()
-
-console.log(allGames)
+const allGames = await grabGame()     //  <  If you click the function name 'grabeGame' and click alt+space a pop-up opens and 
+                                      //     by clicking that it automatically imports the function, but sometimes forget to add .js 
+console.log("", allGames)
 
 if(allGames.error === false){    
 
@@ -165,7 +166,7 @@ if(allGames.error === false){
      }
 
 } else{
-  // errorContainer.innerHTML = ""
+  errorContainer.innerHTML = ""
 
   errorContainer3.innerHTML = `<div class="error">
                 <h1>${allresults.msg}</h1>

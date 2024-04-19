@@ -1,4 +1,4 @@
-let baseURL = "https://api.noroff.dev/api/v1/gamehub/"
+let baseURL = "https://api.noroff.dev/api/v1/gameh/"
 
 // let baseURL = "https://v2.api.noroff.dev/gamehub/"
 
@@ -10,8 +10,8 @@ export async function grabGame(){
         if(req.ok){
 
             const result = await req.json()
-            const data = {
-                games : result,
+            const data = {        // this adds to the previous 'const result' an extra layer and allows us to error handle the output
+                games : result,   // 
                 error : false,
             }    
             return data 
