@@ -1,0 +1,106 @@
+.section1 {
+    background-color: red;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.fetch-and-create-innehtml-no-export {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 1rem;
+    column-gap: 0.4rem;
+
+    h2 {
+        grid-column: 1 /span 4;
+    }
+
+}
+
+.item-card {
+    width: 200px;
+    height: 360px;
+    background-color: white;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    display: grid;
+    align-items: center;
+
+    img {
+        width: 180px;
+        height: 210px;
+    }
+
+    h3 {
+        height: 50px;
+    }
+}
+
+
+
+.section2 {
+    background-color: green;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.fetch-and-foreach-to-create-html {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 1rem;
+    column-gap: 0.4rem;
+
+}
+
+.parent-div {
+    width: 200px;
+    height: 360px;
+    background-color: white;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    display: grid;
+    align-items: center;
+
+
+    img {
+        width: 180px;
+        height: 210px;
+    }
+
+    h3 {
+        height: 50px;
+    }
+}
+
+.section3 {
+    background-color: orange;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.fetch-and-create-innehtml-via-export {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 1rem;
+    column-gap: 0.4rem;
+
+}
+
+.flex-sale {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+
+    p {
+        color: red;
+        text-decoration: line-through;
+    }
+
+    .current-price {
+        color: blue;
+        text-decoration: none;
+    }
+}
