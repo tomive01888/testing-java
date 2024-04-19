@@ -1,4 +1,4 @@
-let baseURL = "https://api.noroff.dev/api/v1/gameh/"
+let baseURL = "https://api.noroff.dev/api/v1/game/"
 
 // let baseURL = "https://v2.api.noroff.dev/gamehub/"
 

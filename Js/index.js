@@ -142,7 +142,7 @@ fetchData2();
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Her importer jeg funksjonen og hvilke fil det er ( husk .js) hvis den ikke legges til automatisk
-import { grabGame } from "./fecthApi.js"
+import { grabGame } from "./fetchApi.js"
 import { createHTML } from "./createhtml.js"
 
 const getAPI3 = document.querySelector(".fetch-and-create-innehtml-via-export")
@@ -151,9 +151,9 @@ const errorContainer3 = document.querySelector(".error3")
 
 let games = []
 
-const allGames = await grabGame()     //  <  If you click the function name 'grabeGame' and click alt+space a pop-up opens and 
-                                      //     by clicking that it automatically imports the function, but sometimes forget to add .js 
-console.log("", allGames)
+const allGames = await grabGame()    
+                                     
+console.log("Error or not?", allGames) 
 
 if(allGames.error === false){    
 
@@ -165,16 +165,18 @@ if(allGames.error === false){
       getAPI3.innerHTML +=  createHTML(games[i]) 
      }
 
-} else{
-  errorContainer.innerHTML = ""
+} else
+
+  errorContainer3.innerHTML = ""
 
   errorContainer3.innerHTML = `<div class="error">
-                <h1>${allresults.msg}</h1>
-                <p>Error status: ${allresults.status}</p>
-                <p>Something went wrong</p>
+                                <h3>${allGames.msg}</h3>
+                                <p>Error status: ${allGames.status}</p>                                
+                                <p>Error: ${allGames.error}</p>
+                                <p>Something went wrong</p>
+                              </div>
+    `;
 
-    </div>`;
-}
 
 
 

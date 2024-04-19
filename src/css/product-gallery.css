@@ -2,6 +2,9 @@
     background-color: red;
     padding: 1rem;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .fetch-and-create-innehtml-no-export {
@@ -43,6 +46,9 @@
     background-color: green;
     padding: 1rem;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .fetch-and-foreach-to-create-html {
@@ -79,6 +85,9 @@
     background-color: orange;
     padding: 1rem;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .fetch-and-create-innehtml-via-export {
