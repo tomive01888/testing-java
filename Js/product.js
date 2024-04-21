@@ -31,7 +31,7 @@ const arrId = searchParameters.get("arrid")
 // URLSearchParams() is where we will be using the 'window.location.search', searching in the URL string
 // and by using '.get' we are grabbing the keyword string value, which we made beforehand 'arr=id'
 
-console.log(arrId)
+console.log("this is ID of game:", arrId) // we can use a string to easier identify each console.log
 
 
 async function singleProductPage(){
