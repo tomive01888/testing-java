@@ -20,25 +20,48 @@
     <main>
       <h1>Testing API call, and error handling. Display of different methods of HTML via JS</h1>
 
+      <div>
+        <a class="anchors" href="#ALL">ALL</a>
+        <a class="anchors" href="#ON-SALE">ON SALE</a>
+        <a class="anchors" href="#FAVORITE">FAVORITES</a>
+      </div>
+
       <section class="section1">
+        <select class="selected-genre">
+          <option selected value="All">All genres</option>
+          <option value="actioN">Action</option>
+          <option value="HORROR">Horror</option>
+          <option value="SpOrTs">Sports</option>
+          <option value="AdveNtuRE">Adventure</option>
+        </select>
         <h2>Displaying content using loop and x.inneHTML</h2>
-        <div class="fetch-and-create-innehtml-no-export"></div>
+        <div class="fetch-and-create-innerhtml-no-export"></div>
         <div class="error"></div>
       </section>
 
       <section class="section2">
-        <h2>Displaying content using forEach loop inneHTML</h2>
+        <h2>Displaying content using forEach and creatingElement</h2>
         <div class="fetch-and-foreach-to-create-html"></div>
         <div class="error2"></div>
       </section>
 
-      <section class="section3">
+      <section id="ALL" class="section3">
         <h2>Displaying content using imported functions</h2>
         <div class="fetch-and-create-innehtml-via-export"></div>
         <div class="error3"></div>
       </section>
 
       <div class="error"></div>
+
+      <section id="ON-SALE" class="section4">
+        <h2>onSale products (filtered)</h2>
+        <div class="on-sale-cont"></div>
+      </section>
+
+      <section id="FAVORITE" class="section5">
+        <h2>This is my favorite list! (filtered)</h2>
+        <div class="favorite"></div>
+      </section>
     </main>
 
     <footer>

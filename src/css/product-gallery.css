@@ -6,10 +6,13 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 90%;
+
 }
 
-.fetch-and-create-innehtml-no-export {
+.fetch-and-create-innerhtml-no-export {
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(4, 1fr);
     row-gap: 1rem;
     column-gap: 0.4rem;
@@ -51,10 +54,13 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 90%;
+
 }
 
 .fetch-and-foreach-to-create-html {
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(4, 1fr);
     row-gap: 1rem;
     column-gap: 0.4rem;
@@ -91,10 +97,12 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 90%;
 }
 
 .fetch-and-create-innehtml-via-export {
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(4, 1fr);
     row-gap: 1rem;
     column-gap: 0.4rem;
@@ -114,5 +122,54 @@
     .current-price {
         color: blue;
         text-decoration: none;
+    }
+}
+
+
+
+.section4 {
+    background-color: rgb(163, 0, 188);
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 90%;
+
+    h2 {
+        width: 100%;
+    }
+
+    .on-sale-cont {
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 1rem;
+        column-gap: 0.4rem;
+    }
+}
+
+
+.section5 {
+    background-color: rgb(0, 225, 241);
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 90%;
+
+    h2 {
+        width: 100%;
+    }
+
+    .favorite {
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 1rem;
+        column-gap: 0.4rem;
     }
 }

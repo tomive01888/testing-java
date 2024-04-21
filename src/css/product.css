@@ -1,0 +1,36 @@
+.single-product {
+    display: flex;
+}
+
+.item {
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+
+    img {
+        width: 100%;
+        max-width: 50%;
+        margin: 1rem;
+    }
+
+    .item-info {
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+        margin: 1rem;
+        gap: 1rem;
+
+
+        div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            p {
+                font-size: 30px;
+                color: red;
+            }
+        }
+    }
+
+}
