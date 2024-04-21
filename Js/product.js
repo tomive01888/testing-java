@@ -22,7 +22,7 @@ const arrId = searchParameters.get("arrid")
 //from the export       let html = `<a class="item-card" href="/product/index.html?arrid=${arr.id}">                (line9)-nmr2
 //
 // arrid is the key-word we'll search for, which we want to grab.
-//arrid=${id} meaning whatever comes after '=' should be the id of a product
+// whatever comes after '=' should be the id of a product
 // 
 // And we use that string value to add into our baseURL for us to access the single item part of the full array.
 // See more on Mollify to understand it better.
