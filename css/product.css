@@ -19,6 +19,7 @@
         max-width: 50%;
         margin: 1rem;
         gap: 1rem;
+        height: fit-content;
 
 
         div {
@@ -33,4 +34,26 @@
         }
     }
 
+}
+
+.add-cart {
+    width: 100%;
+    padding: 10px;
+    background: green;
+    color: black;
+    font-size: 25px;
+}
+
+nav {
+    .btn {
+        width: 100px;
+        height: 50px;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+
+        background-color: white;
+        color: black;
+    }
 }

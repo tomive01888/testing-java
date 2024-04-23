@@ -222,7 +222,7 @@ if(allGames.error === false){
     console.log("data fetched", games)
 
     for(let i = 0; i < games.length; i++){   
-      getAPI3.innerHTML +=  createHTML(games[i]) 
+      getAPI3.innerHTML += createHTML(games[i]) 
      }
 
 } else{

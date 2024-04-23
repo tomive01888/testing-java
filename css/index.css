@@ -1,5 +1,6 @@
 @import url(./product-gallery.css);
-@import url(../css/product.css);
+@import url(./product.css);
+@import url(./cart.css);
 
 * {
     padding: 0;
@@ -24,6 +25,26 @@ header {
     margin: 0 auto;
     background-color: blue;
     height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+nav {
+
+    .btn {
+        width: 100px;
+        height: 50px;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+
+        background-color: white;
+        color: black;
+    }
 }
 
 main {
@@ -47,3 +68,4 @@ footer {
     color: white;
 
 }
+
