@@ -13,8 +13,8 @@ let gameList = []
 async function fetchData() {
   try {
     const response = await fetch('https://api.noroff.dev/api/v1/gamehub/'); // Await the fetch request
-    if (!response.ok) {                                                     // try remove a word from URL and 
-                                                                            // see the error occur on page and console.log
+        if (!response.ok) {                                                    
+                                                                           
       errorContainer.innerHTML +=  `<div class="error">   
                                       <p>Something went wrong</p>
                                     </div>`;
@@ -116,7 +116,7 @@ const errorContainer2 = document.querySelector(".error2")
 
 async function fetchData2() {
   try {
-    const response = await fetch('https://api.noroff.dev/api/v1/gamehub/'); // Await the fetch request
+    const response = await fetch('https://api.noroff.dev/api/v1/gameb/'); // Await the fetch request
     if (!response.ok) {
 
       errorContainer2.innerHTML +=  `<div class="error">   

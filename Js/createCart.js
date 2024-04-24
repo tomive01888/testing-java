@@ -1,6 +1,6 @@
 import { getFromStorage } from "./localstorage.js"
 
-let localStorageList = getFromStorage("movieitem")
+let localStorageList = getFromStorage("gameitem")
 
 const cartOnDisplay = document.querySelector(".itemContainer")
 
@@ -89,7 +89,7 @@ function deleteFromCart(event){
 
       cartOnDisplay.innerHTML = ""
   
-      localStorage.clear("gameKey");
+      localStorage.clear("gameitem");
       
       cartContainer.innerHTML = "Your cart is empty";  
   
@@ -100,7 +100,7 @@ function deleteFromCart(event){
   
     localStorageList = removeOne
   
-    localStorage.setItem("gameKey", JSON.stringify(localStorageList))
+    localStorage.setItem("gameitem", JSON.stringify(localStorageList))
   
     let HTML = createCartItem(localStorageList)
   

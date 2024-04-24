@@ -84,7 +84,7 @@ async function singleProductPage(){
                                     </div>`;
     } catch(error){
         
-        console.error('Fetch error:', error.message); // Handling any errors
+        console.error('Fetch error:'); // Handling any errors
 
     }
 } 
@@ -96,8 +96,11 @@ singleProductPage()
 
 addCartBtn.addEventListener("click", addItemToStorage)
 
-function addItemToStorage(){
+async function addItemToStorage(){
 
+  const req = await fetch(baseURL + arrId);
+
+  const gameInfo = await req.json()
     let qty = 1; 
 
     // Here we make our own array, which we can set into the localStorage
@@ -105,7 +108,7 @@ function addItemToStorage(){
         title: gameInfo.title,
         url: gameInfo.image,
         quantity: qty,
-        quantity: gameInfo.onSale ? gameInfo.discountedPrice : gameInfo.price,
+        price: gameInfo.onSale ? gameInfo.discountedPrice : gameInfo.price,
     }
 
     const isGameStored = isItemincart(localStorageList, gameInfo.title) // See below function

@@ -1,4 +1,4 @@
-let baseURL = "https://api.noroff.dev/api/v1/gamehub/" //intentional error to display it
+let baseURL = "https://api.noroff.dev/api/v1/gameub/" //intentional error to display it
 
 // let baseURL = "https://v2.api.noroff.dev/gamehub/"
 
