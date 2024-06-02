@@ -41,26 +41,31 @@ export function redirectToLanguage(languageCode) {
   // Split the path into segments
   const pathSegments = path.split("/");
 
-  // Insert or update the language prefix immediately after the repository name
+  // Find the position of the language prefix, starting from the repository name
+  let languageIndex = pathSegments.indexOf("testing-java") + 1;
+
+  // If the language prefix is not immediately after the repository name, search for it in subdirectories
+  if (languageIndex === -1) {
+    languageIndex = pathSegments.findIndex((segment) => segment === "no" || segment === "mg");
+  }
+
+  // Handle the language prefix based on the selected language code
   if (languageCode === "default") {
     // Remove the language prefix if it exists
-    if (pathSegments[1] === "no" || pathSegments[1] === "mg") {
-      pathSegments.splice(1, 1);
+    if (languageIndex !== -1) {
+      pathSegments.splice(languageIndex, 1);
     }
   } else {
     // Insert or update the language prefix
-    if (pathSegments[1] !== languageCode) {
+    if (languageIndex === -1) {
       pathSegments.splice(1, 0, languageCode);
+    } else if (pathSegments[languageIndex] !== languageCode) {
+      pathSegments[languageIndex] = languageCode;
     }
   }
 
-  // Join the path segments back together
   path = pathSegments.join("/");
-
-  // Update the pathname of the URL
   url.pathname = "/" + path;
-
-  // Navigate to the new URL
   window.location.href = url.href;
 }
 
