@@ -10,16 +10,12 @@
 
 }
 
-.fetch-and-create-innerhtml-no-export {
+.itemsOnDisplay {
     display: grid;
     place-items: center;
     grid-template-columns: repeat(4, 1fr);
     row-gap: 1rem;
     column-gap: 0.4rem;
-
-    h2 {
-        grid-column: 1 /span 4;
-    }
 
 }
 

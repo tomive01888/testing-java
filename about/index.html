@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Testing different way to fetch and display array" />
+    <title>TESTING STUFF</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="../navbar.css" />
+    <link rel="alternate" hreflang="en" href="https://example.com/en/page" />
+    <link rel="alternate" hreflang="mg" href="https://example.com/mg/page" />
+    <link rel="alternate" hreflang="no" href="https://example.com/no/page" />
+  </head>
+
+  <body>
+    <header>
+      <img src="../SquareEye.png" alt="Logo" />
+      <div class="rightBarNavigation">
+        <p data-translate="search">Search</p>
+        <a href="../contact/index.html" data-translate="contact">Contact</a>
+        <a href="" data-translate="about">About MMF</a>
+        <select name="More" id="moreOptions">
+          <option value="thing1" data-translate="thing1"></option>
+          <option value="thing2" data-translate="thing2">thing2</option>
+          <option value="thing3" data-translate="thing3">thing3</option>
+        </select>
+        <div id="languageOption">
+          <img src="../assets/icons8-globe-50.png" alt="" />
+          <select id="languageSelect" onchange="redirectToSelectedLanguage()">
+            <option value="default">English</option>
+            <option value="no">Norsk</option>
+            <option value="mg">Malagasy</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <h3 class="text1">About MMF</h3>
+        <p class="paragraph1">
+          MMF is a music school in Antsirabe, Madagascar, that works holistically to help street children out of
+          poverty. MMF was founded by Eline Rodvelt Hansen and her husband Dina Risalina Andriamanalina in 2021.
+          Madagascar is one of the poorest countries in the world, with one in two children malnourished and only one in
+          three completing primary school. Our target group is the poorest children in Antsirabe, as well as children
+          who fall outside the scope of other aid organizations.
+        </p>
+        <p class="paragraph2">
+          The children we take in as students at MMF are living on the streets when we get to know them. The reason they
+          live on the streets is poverty. When families do not have food to give to their children, sending them out to
+          beg becomes the only means of survival. The children are left to fend for themselves, and it is often seen
+          that older children take responsibility for their younger siblings. The daily life of children living on the
+          street is extremely tough and difficult to imagine. During the day, they spend a lot of time and effort
+          begging and looking for food in the trash. As darkness approaches, it is important to find a safe place to
+          sleep for the night.
+        </p>
+        <p class="paragraph3">
+          At MMF, we work to find safe caregivers who can take care of each child. Ideally, we want them to be with
+          their mother and father, but in some cases, this is difficult to achieve. So far, there is always a
+          grandmother or an aunt who both wants and is able to take care of the children with extra support and help
+          from us. Instead of taking responsibility away from the parents by caring for the children ourselves, we work
+          to strengthen each family and help the parents take care of their children. When we take in a new child into
+          the project, we usually include all the siblings. We have found that working together with the whole family
+          gives good results, and we feel it would be unfair if a sibling does not get the same opportunities.
+        </p>
+        <p class="paragraph4">
+          We currently have a total of 70 children at MMF aged 1-19 years. The children sleep at home but are with us in
+          our facilities all day when they are not at school. Here, they receive help with schoolwork, meals, follow-up
+          from our doctor on health and nutrition, music lessons, and plenty of time for play and activities together.
+          We actively work to help the children develop, and for us, it is important that the assistance we provide
+          ultimately strengthens the children to stand on their own feet as they grow older.
+        </p>
+      </article>
+    </main>
+
+    <script type="module">
+      import { redirectToLanguage, redirectToSelectedLanguage } from "../Js/language.mjs";
+
+      window.redirectToSelectedLanguage = redirectToSelectedLanguage;
+    </script>
+  </body>
+</html>

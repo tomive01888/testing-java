@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="Testing different way to fetch and display array" />
+    <title>TESTING STUFF</title>
+    <link rel="stylesheet" href="../../css/index.css" />
+    <link rel="stylesheet" href="../../navbar.css" />
+    <link rel="alternate" hreflang="en" href="https://example.com/en/page" />
+    <link rel="alternate" hreflang="mg" href="https://example.com/mg/page" />
+    <link rel="alternate" hreflang="no" href="https://example.com/no/page" />
+  </head>
+
+  <body>
+    <header>
+      <img src="../../SquareEye.png" alt="Logo" />
+      <div class="rightBarNavigation">
+        <p data-translate="search">Søk</p>
+        <a href="../contact/index.html" data-translate="news">Kontakt oss</a>
+        <a href="../about/index.html" data-translate="about">Om MMF</a>
+        <select name="More" id="moreOptions">
+          <option value="thing1" data-translate="thing1"></option>
+          <option value="thing2" data-translate="thing2">thing2</option>
+          <option value="thing3" data-translate="thing3">thing3</option>
+        </select>
+        <div id="languageSelector" class="radio-group">
+          <input type="radio" id="english" name="language" onclick="redirectToLanguage('default')" />
+          <label for="english">
+            <img src="../../assets/gb.svg" alt="English" />
+            EN
+          </label>
+
+          <input type="radio" id="norwegian" name="language" onclick="redirectToLanguage('no')" />
+          <label for="norwegian">
+            <img src="../../assets/no.svg" alt="Norwegian" />
+            NO
+          </label>
+
+          <input type="radio" id="malagasy" name="language" onclick="redirectToLanguage('mg')" />
+          <label for="malagasy">
+            <img src="../../assets/mg.svg" alt="Malagasy" />
+            MG
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <h3 class="text1">Om MMF</h3>
+        <p class="paragraph1">
+          MMF er en musikkskole i Antsirabe, Madagaskar, som jobber helhetlig for å hjelpe gatebarn ut av fattigdom. MMF
+          ble grunnlagt av Eline Rodvelt Hansen og hennes mann Dina Risalina Andriamanalina I 2021. Madagaskar er et av
+          verdens fattigste land, ett av to barn er underernærte, og bare én av tre fullfører grunnskolen. Vår målgruppe
+          er de aller fattigste barna i Antsirabe, og barn som ellers faller utenfor andre hjelpeorganisasjoner.
+        </p>
+        <p class="paragraph2">
+          Barna vi tar inn som elever i MMF bor på gaten når vi blir kjent med dem. Grunnen til at de bor på gaten er
+          fattigdom. Når familier ikke har mat å gi til barna sine, blir det å sende dem ut på gaten for å tigge eneste
+          mulighet til overlevelse. Barna blir overlatt til seg selv, og man ser ofte at eldre barn får ansvar for yngre
+          søsken. Hverdagen for barna som lever på gata er ekstremt tøff og vanskelig å forestille seg. På dagtid bruker
+          de mye tid og krefter på å tigge, og å lete etter mat i søpla. Når mørket nærmer seg er det viktig å finne et
+          trygt sted å sove for natten.
+        </p>
+        <p class="paragraph3">
+          Vi i MMF jobber med å finne trygge omsorgspersoner som kan ta vare på hvert enkelt barn. Vi ønsker aller helst
+          at de kan få være med sin mor og far, men i noen tilfeller er dette vanskelig å få til. Så langt er det alltid
+          en bestemor eller en tante som både ønsker og klarer å ta seg av barna med ekstra støtte og hjelp fra oss. I
+          stedet for å ta ansvaret bort fra foreldrene ved at vi tar oss av barna, jobber vi for å styrke den enkelte
+          familie og hjelper foreldrene med å ta seg av barna sine. Når vi tar inn et nytt barn i prosjektet, inkluderer
+          vi som regel alle søsknene. Vi har sett at det gir gode resultater å jobbe sammen med hele familien, og
+          opplever at det ville være urettferdig om et søsken ikke får de samme mulighetene.
+        </p>
+        <p class="paragraph4">
+          Vi har nå totalt 70 barn i MMF i alderen 1-19 år. Barna sover hjemme, men er sammen med oss i våre lokaler
+          hele dagen når de ikke er på skolen. Her får de hjelp til skolearbeid, måltider, oppfølging fra vår lege innen
+          helse og ernæring, musikkundervisning og også mye tid til lek og aktiviteter sammen. Vi jobber aktivt med å
+          hjelpe barna til å utvikle seg, og for oss er det viktig at hjelpen vi gir på sikt styrker barna til å stå på
+          egne ben når de blir eldre.
+        </p>
+      </article>
+    </main>
+    <script type="module">
+      import { redirectToLanguage } from "../../Js/language.mjs";
+
+      window.redirectToLanguage = redirectToLanguage;
+    </script>
+  </body>
+</html>
