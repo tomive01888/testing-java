@@ -1,3 +1,7 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////            Regular pages               ///////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
 // export function redirectToLanguage(languageCode) {
 //   const currentUrl = window.location.href;
 //   const url = new URL(currentUrl);
@@ -23,6 +27,10 @@
 //   window.location.href = url.href;
 // }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////        Github pages       //////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
 export function redirectToLanguage(languageCode) {
   const currentUrl = window.location.href;
   const url = new URL(currentUrl);
@@ -33,16 +41,16 @@ export function redirectToLanguage(languageCode) {
   // Split the path into segments
   const pathSegments = path.split("/");
 
-  // Handle the language prefix based on the selected language code
+  // Insert or update the language prefix immediately after the repository name
   if (languageCode === "default") {
     // Remove the language prefix if it exists
-    if (pathSegments[0] === "no") {
-      pathSegments.shift();
+    if (pathSegments[1] === "no" || pathSegments[1] === "mg") {
+      pathSegments.splice(1, 1);
     }
   } else {
     // Insert or update the language prefix
-    if (pathSegments[0] !== languageCode) {
-      pathSegments.unshift(languageCode);
+    if (pathSegments[1] !== languageCode) {
+      pathSegments.splice(1, 0, languageCode);
     }
   }
 
