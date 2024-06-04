@@ -13,21 +13,26 @@
     <header>
       <img src="../SquareEye.png" alt="Logo" />
       <div class="rightBarNavigation">
-        <p data-translate="search">Search</p>
-        <a href="../contact/index.html" data-translate="contact">Contact</a>
-        <a href="" data-translate="about">About MMF</a>
+        <p data-translate="search">S</p>
+        <a href="../contact/index.html" data-translate="contact">C</a>
+        <a href="" data-translate="about">A</a>
         <select name="More" id="moreOptions">
-          <option value="thing1" data-translate="thing1"></option>
-          <option value="thing2" data-translate="thing2">thing2</option>
-          <option value="thing3" data-translate="thing3">thing3</option>
+          <option value="thing1" data-translate="thing1">Option 1</option>
+          <option value="thing2" data-translate="thing2">Option 2</option>
+          <option value="thing3" data-translate="thing3">Option 3</option>
         </select>
+
         <div id="languageOption">
-          <img src="../assets/icons8-globe-50.png" alt="" />
-          <select id="languageSelect" onchange="redirectToSelectedLanguage()">
-            <option value="default">English</option>
-            <option value="no">Norsk</option>
-            <option value="mg">Malagasy</option>
-          </select>
+          <span id="activeLanguage">
+            <img src="/assets/icons8-globe-50.png" alt="globe icon" />
+            English
+            <img src="/assets/down-arrow-5-svgrepo-com.svg" alt="arrow down" />
+          </span>
+          <div id="languageSelect">
+            <a href="javascript:void(0)" onclick="redirectToLanguage('no')">Norsk</a>
+            <a href="javascript:void(0)" onclick="redirectToLanguage('mg')">Malagasy</a>
+            <!-- <a href="javascript:void(0)" onclick="redirectToLanguage('xx')">Add more if needed</a> -->
+          </div>
         </div>
       </div>
     </header>
@@ -71,9 +76,32 @@
     </main>
 
     <script type="module">
-      import { redirectToLanguage, redirectToSelectedLanguage } from "../Js/language.mjs";
+      import { redirectToLanguage, updateTextContent, initializeLanguage } from "../Js/language.mjs";
 
-      window.redirectToSelectedLanguage = redirectToSelectedLanguage;
+      document.addEventListener("DOMContentLoaded", function () {
+        const activeLanguage = document.getElementById("activeLanguage");
+        const languageSelect = document.getElementById("languageSelect");
+
+        // Toggle the language dropdown
+        activeLanguage.addEventListener("click", function () {
+          languageSelect.style.display = languageSelect.style.display === "block" ? "none" : "block";
+        });
+
+        // Close the dropdown when clicking outside of it
+        document.addEventListener("click", function (event) {
+          if (!document.getElementById("languageOption").contains(event.target)) {
+            languageSelect.style.display = "none";
+          }
+        });
+
+        // Initialize the language content
+        const currentLanguage = initializeLanguage();
+
+        // Assign the redirectToLanguage function to the global scope
+        window.redirectToLanguage = (languageCode) => {
+          redirectToLanguage(languageCode);
+        };
+      });
     </script>
   </body>
 </html>

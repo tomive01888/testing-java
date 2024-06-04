@@ -9,67 +9,52 @@ header {
 
 }
 
-#languageSelector {
-    display: grid;
-    row-gap: 10px;
-
-
-    label {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        font-size: 14px;
-        cursor: pointer;
-
-    }
-
-    img {
-        border-radius: 4px;
-        cursor: pointer;
-    }
-}
-
-.radio-group input[type="radio"] {
-    display: none;
-}
-
-.radio-label {
-    cursor: pointer;
-    display: block;
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    text-align: center;
-    background-color: #8d8d8d;
-    transition: background-color 0.3s, color 0.3s;
-
-}
-
-
 .rightBarNavigation {
-    width: 100%;
-    max-width: 70%;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-    color: white;
-
-    a,
-    p {
-        text-decoration: none;
-        font-size: 20px;
-        color: white;
-    }
-
-
+    width: 100%;
+    max-width: 90%;
 }
 
-#moreOptions {
-    border: none;
-    background: pink;
-    font-size: 20px;
-    color: rgb(0, 0, 0);
-    width: 100px;
-    padding: 5px;
+/* Basic styles for demonstration */
+#languageOption {
+    position: relative;
+    display: inline-block;
+}
+
+#activeLanguage {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+    border: 1px solid rgb(90, 90, 90);
     border-radius: 4px;
+    background-color: rgb(194, 194, 194);
+}
+
+#languageSelect {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(35, 35, 35);
+    border: 1px solid #ccc;
+    z-index: 1000;
+    width: 150px;
+    /* margin-top: 5px; */
+    border-radius: 0 0 4px 4px;
+}
+
+#languageSelect a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+#languageSelect a:hover {
+    background-color: #686868;
 }

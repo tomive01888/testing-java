@@ -1,44 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Description" content="Testing different way to fetch and display array" />
     <title>TESTING STUFF</title>
-    <link rel="stylesheet" href="../../css/index.css" />
-    <link rel="stylesheet" href="../../navbar.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/navbar.css" />
   </head>
 
   <body>
     <header>
-      <img src="../../SquareEye.png" alt="Logo" />
+      <img src="/SquareEye.png" alt="Logo" />
       <div class="rightBarNavigation">
-        <p data-translate="search">Søk</p>
-        <a href="../contact/index.html" data-translate="news">Kontakt oss</a>
-        <a href="../about/index.html" data-translate="about">Om MMF</a>
+        <p data-translate="search">Search</p>
+        <a href="/contact/index.html" data-translate="contact">Contact MMF</a>
+        <a href="" data-translate="about">About MMF</a>
         <select name="More" id="moreOptions">
           <option value="thing1" data-translate="thing1"></option>
-          <option value="thing2" data-translate="thing2">thing2</option>
-          <option value="thing3" data-translate="thing3">thing3</option>
+          <option value="thing2" data-translate="thing2">Option 2</option>
+          <option value="thing3" data-translate="thing3">Option 3</option>
         </select>
-        <div id="languageSelector" class="radio-group">
-          <input type="radio" id="english" name="language" onclick="redirectToLanguage('default')" />
-          <label for="english">
-            <img src="../../assets/gb.svg" alt="English" />
-            EN
-          </label>
 
-          <input type="radio" id="norwegian" name="language" onclick="redirectToLanguage('no')" />
-          <label for="norwegian">
-            <img src="../../assets/no.svg" alt="Norwegian" />
-            NO
-          </label>
-
-          <input type="radio" id="malagasy" name="language" onclick="redirectToLanguage('mg')" />
-          <label for="malagasy">
-            <img src="../../assets/mg.svg" alt="Malagasy" />
-            MG
-          </label>
+        <div id="languageOption">
+          <span id="activeLanguage">
+            <img src="../../assets/icons8-globe-50.png" alt="globe icon" />
+            Norsk
+            <img src="../../assets/down-arrow-5-svgrepo-com.svg" alt="arrow down" />
+          </span>
+          <div id="languageSelect">
+            <a href="javascript:void(0)" onclick="redirectToLanguage('default')">English</a>
+            <a href="javascript:void(0)" onclick="redirectToLanguage('mg')">Malagasy</a>
+            <!-- <a href="javascript:void(0)" onclick="redirectToLanguage('xx')">Add more if needed</a> -->
+          </div>
         </div>
       </div>
     </header>
@@ -76,12 +70,36 @@
           hjelpe barna til å utvikle seg, og for oss er det viktig at hjelpen vi gir på sikt styrker barna til å stå på
           egne ben når de blir eldre.
         </p>
+        <p>test</p>
       </article>
     </main>
     <script type="module">
-      import { redirectToLanguage, redirectToSelectedLanguage } from "../../Js/language.mjs";
+      import { redirectToLanguage, updateTextContent, initializeLanguage } from "../../Js/language.mjs";
 
-      window.redirectToSelectedLanguage = redirectToSelectedLanguage;
+      document.addEventListener("DOMContentLoaded", function () {
+        const activeLanguage = document.getElementById("activeLanguage");
+        const languageSelect = document.getElementById("languageSelect");
+
+        // Toggle the language dropdown
+        activeLanguage.addEventListener("click", function () {
+          languageSelect.style.display = languageSelect.style.display === "block" ? "none" : "block";
+        });
+
+        // Close the dropdown when clicking outside of it
+        document.addEventListener("click", function (event) {
+          if (!document.getElementById("languageOption").contains(event.target)) {
+            languageSelect.style.display = "none";
+          }
+        });
+
+        // Initialize the language content
+        const currentLanguage = initializeLanguage();
+
+        // Assign the redirectToLanguage function to the global scope
+        window.redirectToLanguage = (languageCode) => {
+          redirectToLanguage(languageCode);
+        };
+      });
     </script>
   </body>
 </html>

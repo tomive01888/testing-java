@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,25 +13,30 @@
     <header>
       <img src="../../SquareEye.png" alt="Logo" />
       <div class="rightBarNavigation">
-        <p data-translate="search">Søk</p>
-        <a href="../contact/index.html" data-translate="news">Kontakt oss</a>
-        <a href="../about/index.html" data-translate="about">Om MMF</a>
+        <p data-translate="search">Search</p>
+        <a href="../contact/index.html" data-translate="contact">Contact</a>
+        <a href="" data-translate="about">About MMF</a>
         <select name="More" id="moreOptions">
-          <option value="thing1" data-translate="thing1"></option>
+          <option value="thing1" data-translate="thing1">thing1</option>
           <option value="thing2" data-translate="thing2">thing2</option>
           <option value="thing3" data-translate="thing3">thing3</option>
         </select>
 
-        <div class="custom-dropdown">
-          <div class="selected-option">
-            <img src="../../../assets/gb.svg" alt="UK flag" />
-            <span>English</span>
+        <div id="languageOption">
+          <span id="activeLanguage">
+            <img src="../../assets/icons8-globe-50.png" alt="globe icon" />
+            Norsk
+            <img src="../../assets/down-arrow-5-svgrepo-com.svg" alt="arrow down" />
+          </span>
+          <div id="languageSelect">
+            <a href="javascript:void(0)" onclick="redirectToLanguage('default')">
+              <img src="../../assets/gb.svg" alt="norwegian flag" /> English
+            </a>
+            <a href="javascript:void(0)" onclick="redirectToLanguage('mg')">
+              <img src="../../assets/mg.svg" alt="madagascan flag" /> Malagasy
+            </a>
+            <!-- <a href="javascript:void(0)" onclick="redirectToLanguage('xx')">Add more if needed</a> -->
           </div>
-          <ul class="dropdown-options">
-            <li data-value="default"><img src="../../../assets/gb.svg" alt="UK flag" /> English</li>
-            <li data-value="no"><img src="../../../assets/no.svg" alt="Norwegian flag" /> Norsk</li>
-            <li data-value="mg"><img src="../../../assets/mg.svg" alt="Madagascan flag" /> Malagasy</li>
-          </ul>
         </div>
       </div>
     </header>
@@ -61,6 +66,28 @@
     </main>
 
     <footer></footer>
-    <script type="module" src="../../dropdownNav.js"></script>
+    <script type="module">
+      import { redirectToLanguage } from "../../Js/language.mjs";
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const activeLanguage = document.getElementById("activeLanguage");
+        const languageSelect = document.getElementById("languageSelect");
+
+        // Toggle the language dropdown
+        activeLanguage.addEventListener("click", function () {
+          languageSelect.style.display = languageSelect.style.display === "block" ? "none" : "block";
+        });
+
+        // Close the dropdown when clicking outside of it
+        document.addEventListener("click", function (event) {
+          if (!languageOption.contains(event.target)) {
+            languageSelect.style.display = "none";
+          }
+        });
+
+        // Assign the redirectToLanguage function to the global scope
+        window.redirectToLanguage = redirectToLanguage;
+      });
+    </script>
   </body>
 </html>

@@ -1,84 +1,79 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////            Regular pages               ///////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////
+const textContent = {
+  en: {
+    search: "Search",
+    contact: "Contact",
+    about: "About MMF",
+    thing1: "Option 1",
+    thing2: "Option 2",
+    thing3: "Option 3",
+  },
+  no: {
+    search: "Søk",
+    contact: "Kontakt oss",
+    about: "Om MMF",
+    thing1: "Alternativ 1",
+    thing2: "Alternativ 2",
+    thing3: "Alternativ 3",
+  },
+  mg: {
+    search: "Karoka",
+    contact: "Mifandraisa aminay",
+    about: "Momba an'i MMF",
+    thing1: "Safidy 1",
+    thing2: "Safidy 2",
+    thing3: "Safidy 3",
+  },
+};
 
-// export function redirectToLanguage(languageCode) {
-//   const currentUrl = window.location.href;
-//   const url = new URL(currentUrl);
-//   const pathSegments = url.pathname.split("/");
+export function updateTextContent(language) {
+  const elementsToTranslate = document.querySelectorAll("[data-translate]");
+  elementsToTranslate.forEach((element) => {
+    const key = element.getAttribute("data-translate");
+    if (textContent[language] && textContent[language][key]) {
+      element.textContent = textContent[language][key];
+    }
+  });
+}
 
-//   const supportedLanguages = ["no", "mg"]; // Add more languages here and also on the radio buttons
+export function initializeLanguage() {
+  const pathSegments = window.location.pathname.split("/");
+  const supportedLanguages = ["no", "mg", "en"];
+  let language = "en";
 
-//   if (languageCode === "default") {
-//     if (supportedLanguages.includes(pathSegments[1])) {
-//       pathSegments.splice(1, 1);
-//     }
-//   } else {
-//     if (supportedLanguages.includes(pathSegments[1])) {
-//       pathSegments[1] = languageCode;
-//     } else if (pathSegments[1] !== languageCode) {
-//       pathSegments.splice(1, 0, languageCode);
-//     }
-//   }
+  if (supportedLanguages.includes(pathSegments[1])) {
+    language = pathSegments[1];
+  }
 
-//   const newPathname = pathSegments.join("/");
-//   url.pathname = newPathname;
-
-//   window.location.href = url.href;
-// }
-
-/////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////        Github pages       //////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////
+  updateTextContent(language);
+  document.getElementById("activeLanguage").innerHTML = `
+    <img src="../assets/icons8-globe-50.png" alt="globe icon" />
+    ${language === "en" ? "English" : language === "no" ? "Norsk" : "Malagasy"}
+    <img src="../assets/down-arrow-5-svgrepo-com.svg" alt="arrow down" />
+  `;
+  return language;
+}
 
 export function redirectToLanguage(languageCode) {
   const currentUrl = window.location.href;
   const url = new URL(currentUrl);
+  const pathSegments = url.pathname.split("/");
 
-  // Remove the hostname and leading slash from the pathname
-  let path = url.pathname.substring(1);
+  const supportedLanguages = ["no", "mg", "en"];
 
-  // Split the path into segments
-  const pathSegments = path.split("/");
-
-  // Find the position of the language prefix
-  let languageIndex = pathSegments.indexOf(languageCode);
-
-  // Handle the language prefix based on the selected language code
   if (languageCode === "default") {
-    // Remove the language prefix if it exists
-    if (languageIndex !== -1) {
-      pathSegments.splice(languageIndex, 1);
+    if (supportedLanguages.includes(pathSegments[1])) {
+      pathSegments.splice(1, 1);
     }
   } else {
-    // Insert or update the language prefix
-    if (languageIndex === -1) {
-      // If the language prefix doesn't exist, insert it after the repository name
-      const repoIndex = pathSegments.indexOf("testing-java");
-      if (repoIndex !== -1) {
-        pathSegments.splice(repoIndex + 1, 0, languageCode);
-      } else {
-        // If the repository name doesn't exist, prepend the language prefix
-        pathSegments.unshift(languageCode);
-      }
-    } else if (pathSegments[languageIndex - 1] !== "testing-java") {
-      // If the language prefix is not immediately after the repository name, update it
-      pathSegments[languageIndex - 1] = languageCode;
+    if (supportedLanguages.includes(pathSegments[1])) {
+      pathSegments[1] = languageCode;
+    } else if (pathSegments[1] !== languageCode) {
+      pathSegments.splice(1, 0, languageCode);
     }
   }
 
-  // Join the path segments back together
-  path = pathSegments.join("/");
+  const newPathname = pathSegments.join("/");
+  url.pathname = newPathname;
 
-  // Update the pathname of the URL
-  url.pathname = "/" + path;
-
-  // Navigate to the new URL
   window.location.href = url.href;
-}
-
-export function redirectToSelectedLanguage() {
-  const languageSelect = document.getElementById("languageSelect");
-  const selectedLanguage = languageSelect.value;
-  redirectToLanguage(selectedLanguage);
 }

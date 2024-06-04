@@ -5,27 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/index.css" />
-    <link rel="stylesheet" href="./navbar.css" /> 
+    <link rel="stylesheet" href="./navbar.css" />
   </head>
   <body>
     <header>
-      <img src="./SquareEye.png" alt="Logo" />
+      <img src="../SquareEye.png" alt="Logo" />
       <div class="rightBarNavigation">
-        <p data-translate="search">Search</p>
-        <a href="./contact/index.html" data-translate="news">Contact us</a>
-        <a href="./about/index.html" data-translate="about">About MMF</a>
+        <p data-translate="search"></p>
+        <a href="../contact/index.html" data-translate="contact"></a>
+        <a href="" data-translate="about"></a>
         <select name="More" id="moreOptions">
-          <option value="thing1" data-translate="thing1">thing1</option>
-          <option value="thing2" data-translate="thing2">thing2</option>
-          <option value="thing3" data-translate="thing3">thing3</option>
+          <option value="thing1" data-translate="thing1"></option>
+          <option value="thing2" data-translate="thing2"></option>
+          <option value="thing3" data-translate="thing3"></option>
         </select>
+
+        <div id="languageOption">
+          <span id="activeLanguage">
+            <img src="../assets/icons8-globe-50.png" alt="globe icon" />
+            English
+            <img src="../assets/down-arrow-5-svgrepo-com.svg" alt="arrow down" />
+          </span>
+          <div id="languageSelect">
+            <a href="javascript:void(0)" onclick="redirectToLanguage('no')">Norsk</a>
+            <a href="javascript:void(0)" onclick="redirectToLanguage('mg')">Malagasy</a>
+            <!-- <a href="javascript:void(0)" onclick="redirectToLanguage('xx')">Add more if needed</a> -->
+          </div>
+        </div>
       </div>
     </header>
 
     <main>
       <h1 class="text1">MMF</h1>
     </main>
-
     <footer>INGENTING HER Å SEEEE</footer>
+  
   </body>
 </html>
