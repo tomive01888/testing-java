@@ -2,7 +2,16 @@
   "search": "Search",
   "contact": "Contact",
   "about": "About MMF",
-  "thing1": "Thing 1",
-  "thing2": "Thing 2",
-  "thing3": "Thing 3"
+  "thing1": "Option 1",
+  "thing2": "Option 2",
+  "thing3": "Option 3",
+  "home": "Home",
+  "aboutUs": "About Us",
+  "services": "Services",
+  "blog": "Blog",
+  "faq": "FAQ",
+  "terms": "Terms of Service",
+  "privacy": "Privacy Policy",
+  "careers": "Careers",
+  "backToTop": "Back to Top"
 }

@@ -1,0 +1,43 @@
+
+For this to work you need to add "data-translate" and connect each element 
+you want to translate with this tag.
+
+Here is a footer example:
+
+<div class="link-container">
+    <div class="footer-links">
+        <a href="#" data-translate="home">Home</a>
+        <a href="#" data-translate="aboutUs">About Us</a>
+        <a href="#" data-translate="services">Services</a>
+        <a href="#" data-translate="contact">Contact</a>
+        <a href="#" data-translate="blog">Blog</a>
+    </div>
+    <div class="footer-extra-links">
+        <a href="#" data-translate="faq">FAQ</a>
+        <a href="#" data-translate="terms">Terms of Service</a>
+        <a href="#" data-translate="privacy">Privacy Policy</a>
+        <a href="#" data-translate="careers">Careers</a>
+    </div>
+</div>
+
+Each has their own "data-translate" tag with a string value name related to it's value.
+Naming them must give meaning and not confusing name-tags. Especially when you have
+multiple or similar links, urls, buttons or options that share similarities.
+
+What matters is that when the client creates a new blog, and if this blog comes on the 
+webpage with a button called "Read more". This button needs to get this "data-translate"
+tag or otherwise it won't be updated to the correct language upon switching. If this is 
+doable or not, I have no clue. As the CMS has not been a thing I learned during our 
+time on this project
+
+
+As the page grows, and buttons and urls gets added, so does this list.
+Essentially needing maintaining from a developer. If the "data-translate" is something
+that can be added from CMS so it's pre-added before content gets made, then is perfect.
+
+Without knowing how to structure of each .html will be and what's gonna be hardcoded or not.
+Moving forward with this can be tricky. But here I am assuming we will do a basic structure
+for the english (default) .html and when going into Norwegian or Malagasy, file structure is
+then redirected inside a folder "/no/index.html" (www.mmf.madagascar.com/no/) for norwegian 
+and malagasy "/mg/index.html" (www.mmf.madagascar.com/mg/). And inside each folder it
+follows the same file structure as the default with, more named folders index.html files.

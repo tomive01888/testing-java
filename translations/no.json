@@ -2,7 +2,16 @@
   "search": "Søk",
   "contact": "Kontakt",
   "about": "Om MMF",
-  "thing1": "Ting 1",
-  "thing2": "Ting 2",
-  "thing3": "Ting 3"
+  "thing1": "Alternativ 1",
+  "thing2": "Alternativ 2",
+  "thing3": "Alternativ 3",
+  "home": "Hjem",
+  "aboutUs": "Om Oss",
+  "services": "Tjenester",
+  "blog": "Blogg",
+  "faq": "FAQ",
+  "terms": "Vilkår for bruk",
+  "privacy": "Personvern",
+  "careers": "Karrierer",
+  "backToTop": "Tilbake til toppen"
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="mg">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,27 +12,27 @@
 
   <body>
     <header>
-      <img src="../../SquareEye.png" alt="Logo" />
+      <img src="/SquareEye.png" alt="Logo" />
       <div class="rightBarNavigation">
         <p data-translate="search">Search</p>
-        <a href="/no/contact/index.html" data-translate="contact">Contact</a>
-        <a href="#" data-translate="about">About MMF</a>
+        <a href="#" data-translate="contact">Contact</a>
+        <a href="/mg/about/index.html" data-translate="about">About MMF</a>
         <select name="More" id="moreOptions">
-          <option value="thing1" data-translate="thing1">thing1</option>
-          <option value="thing2" data-translate="thing2">thing2</option>
-          <option value="thing3" data-translate="thing3">thing3</option>
+          <option value="thing1" data-translate="thing1">tadasdg1</option>
+          <option value="thing2" data-translate="thing2">thiasdasdg2</option>
+          <option value="thing3" data-translate="thing3">tasdasdg3</option>
         </select>
 
         <div id="languageOption">
           <span id="activeLanguage">
-            <img src="../../assets/icons8-globe-50.png" alt="globe icon" />
-            Norsk
-            <img src="../../assets/down-arrow-5-svgrepo-com.svg" alt="arrow down" />
+            <img src="/assets/icons8-globe-50.png" alt="globe icon" />
+            Malagasy
+            <img src="/assets/down-arrow-5-svgrepo-com.svg" alt="arrow down" />
           </span>
           <div id="languageSelect">
             <a href="javascript:void(0)" onclick="redirectToLanguage('default')"> English </a>
-            <a href="javascript:void(0)" onclick="redirectToLanguage('mg')"> Malagasy </a>
-            <a href="javascript:void(0)" onclick="redirectToLanguage('fr')"> Français </a>
+            <a href="javascript:void(0)" onclick="redirectToLanguage('no')"> Norsk </a>
+            <a href="javascript:void(0)" onclick="redirectToLanguage('fr')">Français</a>
             <!-- <a href="javascript:void(0)" onclick="redirectToLanguage('xx')">Add more if needed</a> -->
           </div>
         </div>
@@ -40,41 +40,27 @@
     </header>
 
     <main>
-      <article>
-        <h3 class="text1" data-translate="aboutMMF">Om MMF</h3>
-        <p class="paragraph1">
-          MMF er en musikkskole i Antsirabe, Madagaskar, som jobber helhetlig for å hjelpe gatebarn ut av fattigdom. MMF
-          ble grunnlagt av Eline Rodvelt Hansen og hennes mann Dina Risalina Andriamanalina I 2021. Madagaskar er et av
-          verdens fattigste land, ett av to barn er underernærte, og bare én av tre fullfører grunnskolen. Vår målgruppe
-          er de aller fattigste barna i Antsirabe, og barn som ellers faller utenfor andre hjelpeorganisasjoner.
-        </p>
-        <p class="paragraph2">
-          Barna vi tar inn som elever i MMF bor på gaten når vi blir kjent med dem. Grunnen til at de bor på gaten er
-          fattigdom. Når familier ikke har mat å gi til barna sine, blir det å sende dem ut på gaten for å tigge eneste
-          mulighet til overlevelse. Barna blir overlatt til seg selv, og man ser ofte at eldre barn får ansvar for yngre
-          søsken. Hverdagen for barna som lever på gata er ekstremt tøff og vanskelig å forestille seg. På dagtid bruker
-          de mye tid og krefter på å tigge, og å lete etter mat i søpla. Når mørket nærmer seg er det viktig å finne et
-          trygt sted å sove for natten.
-        </p>
-        <p class="paragraph3">
-          Vi i MMF jobber med å finne trygge omsorgspersoner som kan ta vare på hvert enkelt barn. Vi ønsker aller helst
-          at de kan få være med sin mor og far, men i noen tilfeller er dette vanskelig å få til. Så langt er det alltid
-          en bestemor eller en tante som både ønsker og klarer å ta seg av barna med ekstra støtte og hjelp fra oss. I
-          stedet for å ta ansvaret bort fra foreldrene ved at vi tar oss av barna, jobber vi for å styrke den enkelte
-          familie og hjelper foreldrene med å ta seg av barna sine. Når vi tar inn et nytt barn i prosjektet, inkluderer
-          vi som regel alle søsknene. Vi har sett at det gir gode resultater å jobbe sammen med hele familien, og
-          opplever at det ville være urettferdig om et søsken ikke får de samme mulighetene.
-        </p>
-        <p class="paragraph4">
-          Vi har nå totalt 70 barn i MMF i alderen 1-19 år. Barna sover hjemme, men er sammen med oss i våre lokaler
-          hele dagen når de ikke er på skolen. Her får de hjelp til skolearbeid, måltider, oppfølging fra vår lege innen
-          helse og ernæring, musikkundervisning og også mye tid til lek og aktiviteter sammen. Vi jobber aktivt med å
-          hjelpe barna til å utvikle seg, og for oss er det viktig at hjelpen vi gir på sikt styrker barna til å stå på
-          egne ben når de blir eldre.
-        </p>
-        <p>test</p>
-        <img src="/SquareEye.png" alt="" />
-      </article>
+      <h1>Product page</h1>
+
+      <img id="single-image" src="/assets/slides-baobab-177596685.jpg" alt="" />
+
+      <div class="contact-form">
+        <form action="submit_form.php" method="post">
+          <label for="email">MALAGASY</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="full-name">Fullt Navn:</label>
+          <input type="text" id="full-name" name="full-name" required />
+
+          <label for="title">Tittel:</label>
+          <input type="text" id="title" name="title" required />
+
+          <label for="content">Innhold:</label>
+          <textarea id="content" name="content" rows="5" required></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </main>
 
     <footer>
@@ -116,12 +102,12 @@
             <a href="#" data-translate="careers">Careers</a>
           </div>
         </div>
+
         <div class="footer-back-to-top">
           <a href="#top" data-translate="backToTop">Back to Top</a>
         </div>
       </div>
     </footer>
-
     <script type="module">
       import { redirectToLanguage, updateTextContent, initializeLanguage } from "/Js/language.mjs";
 
