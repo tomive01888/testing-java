@@ -14,33 +14,32 @@
     <header>
       <img src="/SquareEye.png" alt="Logo" />
       <div class="rightBarNavigation">
-        <p data-translate="search">Search</p>
-        <a href="/contact/index.html" data-translate="contact">Contact MMF</a>
-        <a href="" data-translate="about">About MMF</a>
+        <p data-translate="search">Se</p>
+        <a href="/no/contact/index.html" data-translate="contact">Conta</a>
+        <a href="/no/about/index.html" data-translate="about">AbMMF</a>
         <select name="More" id="moreOptions">
-          <option value="thing1" data-translate="thing1"></option>
+          <option value="thing1" data-translate="thing1">Option 1</option>
           <option value="thing2" data-translate="thing2">Option 2</option>
           <option value="thing3" data-translate="thing3">Option 3</option>
         </select>
-
-        <div id="languageOption">
-          <span id="activeLanguage">
-            <img src="/assets/icons8-globe-50.png" alt="globe icon" />
-            Norsk
-            <img src="/assets/down-arrow-5-svgrepo-com.svg" alt="arrow down" />
-          </span>
-          <div id="languageSelect">
-            <a href="javascript:void(0)" onclick="redirectToLanguage('default')">English</a>
-            <a href="javascript:void(0)" onclick="redirectToLanguage('mg')">Malagasy</a>
-            <!-- <a href="javascript:void(0)" onclick="redirectToLanguage('xx')">Add more if needed</a> -->
-          </div>
+      </div>
+      <div id="languageOption">
+        <span id="activeLanguage">
+          <img src="/assets/icons8-globe-50.png" alt="globe icon" />
+          Norsk
+          <img src="/assets/down-arrow-5-svgrepo-com.svg" alt="arrow down" />
+        </span>
+        <div id="languageSelect">
+          <a href="javascript:void(0)" onclick="redirectToLanguage('default')"> English </a>
+          <a href="javascript:void(0)" onclick="redirectToLanguage('mg')"> Malagasy </a>
+          <!-- <a href="javascript:void(0)" onclick="redirectToLanguage('xx')">Add more if needed</a> -->
         </div>
       </div>
     </header>
 
     <main>
       <article>
-        <h3 class="text1">Om MMF</h3>
+        <h3 class="text1" data-translate="aboutMMF">Om MMF</h3>
         <p class="paragraph1">
           MMF er en musikkskole i Antsirabe, Madagaskar, som jobber helhetlig for å hjelpe gatebarn ut av fattigdom. MMF
           ble grunnlagt av Eline Rodvelt Hansen og hennes mann Dina Risalina Andriamanalina I 2021. Madagaskar er et av
@@ -72,8 +71,10 @@
           egne ben når de blir eldre.
         </p>
         <p>test</p>
+        <img src="/SquareEye.png" alt="" />
       </article>
     </main>
+
     <footer>
       <div class="footer-container">
         <div class="general-info-container">
@@ -101,9 +102,9 @@
         <div class="link-container">
           <div class="footer-links">
             <a href="#" data-translate="home">Home</a>
-            <a href="/about/index.html" data-translate="aboutUs">About Us</a>
+            <a href="/no/about/index.html" data-translate="aboutUs">About Us</a>
             <a href="#" data-translate="services">Services</a>
-            <a href="/contact/index.html" data-translate="contact">Contact</a>
+            <a href="/no/contact/index.html" data-translate="contact">Contact</a>
             <a href="#" data-translate="blog">Blog</a>
           </div>
           <div class="footer-extra-links">
@@ -113,12 +114,12 @@
             <a href="#" data-translate="careers">Careers</a>
           </div>
         </div>
-
         <div class="footer-back-to-top">
           <a href="#top" data-translate="backToTop">Back to Top</a>
         </div>
       </div>
     </footer>
+
     <script type="module">
       import { redirectToLanguage, updateTextContent, initializeLanguage } from "../../Js/language.mjs";
 
@@ -145,15 +146,6 @@
         window.redirectToLanguage = (languageCode) => {
           redirectToLanguage(languageCode);
         };
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const backToTopLink = document.querySelector(".footer-back-to-top a");
-
-        backToTopLink.addEventListener("click", function (event) {
-          event.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
       });
     </script>
   </body>
