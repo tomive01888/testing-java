@@ -73,9 +73,9 @@ export function initializeLanguage() {
 
   updateTextContent(language);
   document.getElementById("activeLanguage").innerHTML = `
-    <img src="../assets/icons8-globe-50.png" alt="globe icon" />
+    <img src="/assets/icons8-globe-50.png" alt="globe icon" />
     ${language === "en" ? "English" : language === "no" ? "Norsk" : "Malagasy"}
-    <img src="../assets/down-arrow-5-svgrepo-com.svg" alt="arrow down" />
+    <img src="/assets/down-arrow-5-svgrepo-com.svg" alt="arrow down" />
   `;
   return language;
 }
