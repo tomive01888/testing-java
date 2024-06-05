@@ -12,7 +12,7 @@
 
   <body>
     <header>
-      <img src="../../SquareEye.png" alt="Logo" />
+      <img src="/SquareEye.png" alt="Logo" />
       <div class="rightBarNavigation">
         <p data-translate="search">Search</p>
         <a href="#" data-translate="contact">Contact</a>
@@ -25,9 +25,9 @@
 
         <div id="languageOption">
           <span id="activeLanguage">
-            <img src="../../assets/icons8-globe-50.png" alt="globe icon" />
+            <img src="/assets/icons8-globe-50.png" alt="globe icon" />
             Norsk
-            <img src="../../assets/down-arrow-5-svgrepo-com.svg" alt="arrow down" />
+            <img src="/assets/down-arrow-5-svgrepo-com.svg" alt="arrow down" />
           </span>
           <div id="languageSelect">
             <a href="javascript:void(0)" onclick="redirectToLanguage('default')"> English </a>
@@ -41,7 +41,7 @@
     <main>
       <h1>Product page</h1>
 
-      <img id="single-image" src="../../assets/slides-baobab-177596685.jpg" alt="" />
+      <img id="single-image" src="/assets/slides-baobab-177596685.jpg" alt="" />
 
       <div class="contact-form">
         <form action="submit_form.php" method="post">
@@ -108,7 +108,7 @@
       </div>
     </footer>
     <script type="module">
-      import { redirectToLanguage, updateTextContent, initializeLanguage } from "../../Js/language.mjs";
+      import { redirectToLanguage, updateTextContent, initializeLanguage } from "/Js/language.mjs";
 
       document.addEventListener("DOMContentLoaded", function () {
         const activeLanguage = document.getElementById("activeLanguage");
