@@ -16,11 +16,11 @@
       <div class="rightBarNavigation">
         <p data-translate="search">Search</p>
         <a href="#" data-translate="contact">Contact</a>
-        <a href="../about/index.html" data-translate="about">About MMF</a>
+        <a href="/no/about/index.html" data-translate="about">About MMF</a>
         <select name="More" id="moreOptions">
-          <option value="thing1" data-translate="thing1">thing1</option>
-          <option value="thing2" data-translate="thing2">thing2</option>
-          <option value="thing3" data-translate="thing3">thing3</option>
+          <option value="thing1" data-translate="thing1">tadasdg1</option>
+          <option value="thing2" data-translate="thing2">thiasdasdg2</option>
+          <option value="thing3" data-translate="thing3">tasdasdg3</option>
         </select>
 
         <div id="languageOption">
@@ -89,9 +89,9 @@
         <div class="link-container">
           <div class="footer-links">
             <a href="#" data-translate="home">Home</a>
-            <a href="/about/index.html" data-translate="aboutUs">About Us</a>
+            <a href="/no/about/index.html" data-translate="aboutUs">About Us</a>
             <a href="#" data-translate="services">Services</a>
-            <a href="/contact/index.html" data-translate="contact">Contact</a>
+            <a href="/no/contact/index.html" data-translate="contact">Contact</a>
             <a href="#" data-translate="blog">Blog</a>
           </div>
           <div class="footer-extra-links">
@@ -108,7 +108,7 @@
       </div>
     </footer>
     <script type="module">
-      import { redirectToLanguage } from "../../Js/language.mjs";
+      import { redirectToLanguage, updateTextContent, initializeLanguage } from "../../Js/language.mjs";
 
       document.addEventListener("DOMContentLoaded", function () {
         const activeLanguage = document.getElementById("activeLanguage");
@@ -121,13 +121,18 @@
 
         // Close the dropdown when clicking outside of it
         document.addEventListener("click", function (event) {
-          if (!languageOption.contains(event.target)) {
+          if (!document.getElementById("languageOption").contains(event.target)) {
             languageSelect.style.display = "none";
           }
         });
 
+        // Initialize the language content
+        const currentLanguage = initializeLanguage();
+
         // Assign the redirectToLanguage function to the global scope
-        window.redirectToLanguage = redirectToLanguage;
+        window.redirectToLanguage = (languageCode) => {
+          redirectToLanguage(languageCode);
+        };
       });
     </script>
   </body>
