@@ -11,11 +11,10 @@ exports.handler = async (event) => {
   // Parse the form data
   const formData = JSON.parse(event.body);
 
-  // Mailchimp API details
+  // Replace with your Mailchimp data center and list ID
   const mailchimpAPI = `https://us14.api.mailchimp.com/3.0/lists/8586e861b0/members/`;
   const apiKey = process.env.MAILCHIMP_API_KEY;
 
-  // Construct the request
   const response = await fetch(mailchimpAPI, {
     method: "POST",
     headers: {
@@ -32,7 +31,6 @@ exports.handler = async (event) => {
     }),
   });
 
-  // Handle response
   if (response.ok) {
     return {
       statusCode: 200,
