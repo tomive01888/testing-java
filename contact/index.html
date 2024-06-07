@@ -50,23 +50,23 @@
 
       <img id="single-image" src="../assets/slides-baobab-177596685.jpg" alt="" />
 
-      <div class="contact-form">
-        <form action="submit_form.php" method="post">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="full-name">Full Name:</label>
-          <input type="text" id="full-name" name="full-name" required />
-
-          <label for="title">Title:</label>
-          <input type="text" id="title" name="title" required />
-
-          <label for="content">Content:</label>
-          <textarea id="content" name="content" rows="5" required></textarea>
-
-          <button type="submit">Submit</button>
-        </form>
+      <div>
+        <a
+          href="https://us14.list-manage.com/contact-form?u=72bd31032e4cd077ef7ec96ee&form_id=746b04b946a014c1aefb67722b6acc20"
+          >CLICK TO CONTACT US</a
+        >
       </div>
+
+      <form name="contact" method="POST" action="/.netlify/functions/submit-to-mailchimp">
+        <input type="hidden" name="form-name" value="contact" />
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
 
       <div id="mc_embed_shell">
         <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css" />
@@ -103,23 +103,6 @@
               <div class="optionalParent">
                 <div class="clear foot">
                   <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe" />
-                  <p style="margin: 0px auto">
-                    <a href="http://eepurl.com/iRsvwM" title="Mailchimp - email marketing made easy and fun"
-                      ><span style="display: inline-block; background-color: transparent; border-radius: 4px"
-                        ><img
-                          class="refferal_badge"
-                          src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
-                          alt="Intuit Mailchimp"
-                          style="
-                            width: 220px;
-                            height: 40px;
-                            display: flex;
-                            padding: 2px 0px;
-                            justify-content: center;
-                            align-items: center;
-                          " /></span
-                    ></a>
-                  </p>
                 </div>
               </div>
             </div>
