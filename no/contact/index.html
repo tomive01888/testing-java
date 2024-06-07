@@ -40,20 +40,25 @@
     </header>
 
     <main>
-      <h1>Product page1</h1>
+      <h1>Product page</h1>
 
       <img id="single-image" src="/assets/slides-baobab-177596685.jpg" alt="" />
 
       <div class="contact-form">
-        <form name="contact" method="POST" action="/.netlify/functions/submit-to-mailchimp">
-          <input type="hidden" name="form-name" value="contact" />
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+        <form action="submit_form.php" method="post">
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required />
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
-          <button type="submit">Submit</button>
+
+          <label for="full-name">Fullt Navn:</label>
+          <input type="text" id="full-name" name="full-name" required />
+
+          <label for="title">Tittel:</label>
+          <input type="text" id="title" name="title" required />
+
+          <label for="content">Innhold:</label>
+          <textarea id="content" name="content" rows="5" required></textarea>
+
+          <button type="submit">Send</button>
         </form>
       </div>
     </main>
